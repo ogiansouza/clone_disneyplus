@@ -1,0 +1,47 @@
+@use 'variaveis';
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: variaveis.$corDeFundo;
+    transition: background-color .5s ease;
+    z-index: 1;
+
+    &--is-hidden {
+        background-color: transparent;
+
+        .header {
+            &__logo, &__links__item:first-child {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+
+    &__container {
+        padding: 8px 36px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        max-width: 80px;
+        width: 100%;
+        margin: 5px;
+        transition: opacity .5s ease;
+    }
+
+    &__links {
+        display: flex;
+
+        &__item {
+            margin: 5px;
+            transition: opacity .5s ease;
+        }
+    }
+
+    .button {
+        height: 50px;
+    }
+}
